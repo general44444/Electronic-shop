@@ -118,6 +118,28 @@ namespace Electronic_shop.DAL
         }
 
 
+        /////////////////////add product
+        public void Add_Product(string item_name,string description,double price,string type,byte[] image)
+        {
+            SqlParameter[] p = new SqlParameter[5];
+            p[0] = new SqlParameter("@item_name", SqlDbType.NVarChar, 50);
+            p[0].Value = item_name;
+            p[1] = new SqlParameter("@description", SqlDbType.NVarChar, 50);
+            p[1].Value = description;
+            p[2] = new SqlParameter("@price", SqlDbType.Float);
+            p[2].Value = price;
+            p[3] = new SqlParameter("@type", SqlDbType.NVarChar, 50);
+            p[3].Value = type;
+            p[4] = new SqlParameter("@image", SqlDbType.Image);
+            p[4].Value = image;
+            
+            ob.Open();
+            ob.RUA("Add_Product", p);
+            ob.Close();
+
+        }
+
+
 
     }
 }

@@ -38,13 +38,13 @@ namespace Electronic_shop.Forms
         {
             MouseDown = true;
             LastLocation = e.Location;
-            Cursor = Cursors.Hand;
+            panel1.Cursor = Cursors.Hand;
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             MouseDown = false;
-            Cursor = Cursors.Default;
+            panel1.Cursor = Cursors.Default;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

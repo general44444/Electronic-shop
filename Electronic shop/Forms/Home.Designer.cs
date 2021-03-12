@@ -147,7 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 700);
+            this.ClientSize = new System.Drawing.Size(1300, 832);
             this.Controls.Add(this.ManageData);
             this.Controls.Add(this.AddProduct);
             this.Controls.Add(this.WishList);
@@ -156,6 +156,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Trader";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

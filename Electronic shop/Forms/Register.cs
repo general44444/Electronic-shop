@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 namespace Electronic_shop
 {
     public partial class Register : Form
@@ -15,6 +15,8 @@ namespace Electronic_shop
         bool MouseDown = false;
         Point LastLocation;
         public string id;
+        Regex reg;
+        int sayac;
         public Register()
         {
             InitializeComponent();
@@ -35,49 +37,135 @@ namespace Electronic_shop
         {
             this.Close();
         }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            DAL.PL ob = new DAL.PL();
-            if (txtPassword.Text == txtPassword1.Text)
+            sayac = 0;
+            if (check_F(txtFname.Text))
             {
-                if (txtUser.Text == "" || txtFname.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtUser.Text == "" || txtPhone.Text == "")
-                    return;
+                sayac++;
+            }
+            if (check_L(txtLName.Text))
+            {
+                sayac++;
+            }
+            if (check_Phone(txtPhone.Text))
+            {
+                sayac++;
+            }
+            if (check_email(txtEmail.Text))
+            {
+                sayac++;
+            }
+            if (sayac == 4)
+            {
+                DAL.PL ob = new DAL.PL();
+                if (txtPassword.Text == txtPassword1.Text)
+                {
+                    if (txtUser.Text == "" || txtFname.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtUser.Text == "" || txtPhone.Text == "")
+                        return;
+                    else
+                    {
+                        ob.UserCreate(txtUser.Text, txtFname.Text, txtLName.Text, txtEmail.Text, txtPassword.Text, comboType.Text, txtPhone.Text);
+                        MessageBox.Show("successfully......");
+                        this.Close();
+                        Application.OpenForms[0].Show();
+                    }
+                }
                 else
                 {
-                    ob.UserCreate(txtUser.Text, txtFname.Text, txtLName.Text, txtEmail.Text, txtPassword.Text, comboType.Text, txtPhone.Text);
-                    MessageBox.Show("successfully......");
-                    this.Close();
-                    Application.OpenForms[0].Show();
+                    MessageBox.Show("Password does not match");
                 }
+            }
+            
+        }
+            
+        public bool check_F(string text)
+        {
+            reg = new Regex("^[A-Za-z]+$");
+            if (!reg.IsMatch(text))
+            {
+                txtFname.Clear();
+                txtFname.PlaceholderText = "is not correct";
+                txtFname.PlaceholderForeColor = Color.Red;
+                return false;
             }
             else
             {
-                MessageBox.Show("Password does not match");
+                return true;
+            }
+            
+        }
+
+        public bool check_L(string text)
+        {
+            reg = new Regex("^[A-Za-z]+$");
+            if (!reg.IsMatch(text))
+            {
+                txtLName.Clear();
+                txtLName.PlaceholderText = "is not correct";
+                txtLName.PlaceholderForeColor = Color.Red;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public bool check_email(string text)
+        {
+            reg = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (!reg.IsMatch(txtEmail.Text))
+            {
+                txtEmail.Clear();
+                txtEmail.PlaceholderText = "is not correct";
+                txtEmail.PlaceholderForeColor = Color.Red;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool check_Phone(string text)
+        {
+            reg = new Regex(@"^\d{11,15}$");
+            if (!reg.IsMatch(txtPhone.Text))
+            {
+                txtPhone.Clear();
+                txtPhone.PlaceholderText = "is not correct";
+                txtPhone.PlaceholderForeColor = Color.Red;
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           
-            DAL.PL ob = new DAL.PL();
-            if (txtPassword.Text == txtPassword1.Text)
-            {
-                if (txtUser.Text == "" || txtFname.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtUser.Text == "" || txtPhone.Text == "")
-                    return;
+            
+                DAL.PL ob = new DAL.PL();
+                if (txtPassword.Text == txtPassword1.Text)
+                {
+                    if (txtUser.Text == "" || txtFname.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtUser.Text == "" || txtPhone.Text == "")
+                        return;
+                    else
+                    {
+                        ob.UpdateUser(Convert.ToInt32(id), txtUser.Text, txtFname.Text, txtLName.Text, txtEmail.Text, txtPassword.Text, comboType.Text, txtPhone.Text);
+                        MessageBox.Show("update successfully......");
+                        this.Close();
+                        Application.OpenForms[0].Show();
+                    }
+                }
                 else
                 {
-                    ob.UpdateUser(Convert.ToInt32(id),txtUser.Text, txtFname.Text, txtLName.Text, txtEmail.Text, txtPassword.Text, comboType.Text, txtPhone.Text);
-                    MessageBox.Show("update successfully......");
-                    this.Close();
-                    Application.OpenForms[0].Show();
+                    MessageBox.Show("Password does not match");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Password does not match");
-            }
-           
+            
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -101,6 +189,26 @@ namespace Electronic_shop
                 int NewY = (Location.Y - LastLocation.Y) + e.Y;
                 Location = new Point(NewX, NewY);
             }
+        }
+
+        private void txtFname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void txtFname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            check_email(txtEmail.Text);
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

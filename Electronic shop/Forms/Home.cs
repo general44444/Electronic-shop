@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,19 @@ namespace Electronic_shop
         {
            Forms.WishList  frm = new Forms.WishList();
             frm.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

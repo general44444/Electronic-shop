@@ -31,7 +31,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtFname = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.comboType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtPassword1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.txtFname = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,30 +95,6 @@
             this.txtLName.ShadowDecoration.Parent = this.txtLName;
             this.txtLName.Size = new System.Drawing.Size(343, 36);
             this.txtLName.TabIndex = 8;
-            // 
-            // txtFname
-            // 
-            this.txtFname.BorderRadius = 5;
-            this.txtFname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFname.DefaultText = "";
-            this.txtFname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFname.DisabledState.Parent = this.txtFname;
-            this.txtFname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFname.FocusedState.Parent = this.txtFname;
-            this.txtFname.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFname.HoverState.Parent = this.txtFname;
-            this.txtFname.Location = new System.Drawing.Point(26, 171);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.PasswordChar = '\0';
-            this.txtFname.PlaceholderText = "Enter your first name";
-            this.txtFname.SelectedText = "";
-            this.txtFname.ShadowDecoration.Parent = this.txtFname;
-            this.txtFname.Size = new System.Drawing.Size(343, 36);
-            this.txtFname.TabIndex = 7;
             // 
             // btnRegister
             // 
@@ -246,6 +222,7 @@
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
             this.txtEmail.Size = new System.Drawing.Size(343, 36);
             this.txtEmail.TabIndex = 13;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // label6
             // 
@@ -399,6 +376,32 @@
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // txtFname
+            // 
+            this.txtFname.BorderRadius = 5;
+            this.txtFname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFname.DefaultText = "";
+            this.txtFname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFname.DisabledState.Parent = this.txtFname;
+            this.txtFname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFname.FocusedState.Parent = this.txtFname;
+            this.txtFname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFname.HoverState.Parent = this.txtFname;
+            this.txtFname.Location = new System.Drawing.Point(26, 171);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.PasswordChar = '\0';
+            this.txtFname.PlaceholderText = "Enter your first name";
+            this.txtFname.SelectedText = "";
+            this.txtFname.ShadowDecoration.Parent = this.txtFname;
+            this.txtFname.Size = new System.Drawing.Size(343, 36);
+            this.txtFname.TabIndex = 7;
+            this.txtFname.TextChanged += new System.EventHandler(this.txtFname_TextChanged);
+            this.txtFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,12 +454,12 @@
         public Guna.UI2.WinForms.Guna2Button btnRegister;
         public Guna.UI2.WinForms.Guna2Button btnUpdate;
         public Guna.UI2.WinForms.Guna2TextBox txtLName;
-        public Guna.UI2.WinForms.Guna2TextBox txtFname;
         public Guna.UI2.WinForms.Guna2TextBox txtPassword;
         public Guna.UI2.WinForms.Guna2TextBox txtEmail;
         public Guna.UI2.WinForms.Guna2TextBox txtPhone;
         public Guna.UI2.WinForms.Guna2TextBox txtUser;
         public Guna.UI2.WinForms.Guna2ComboBox comboType;
         public Guna.UI2.WinForms.Guna2TextBox txtPassword1;
+        public Guna.UI2.WinForms.Guna2TextBox txtFname;
     }
 }
