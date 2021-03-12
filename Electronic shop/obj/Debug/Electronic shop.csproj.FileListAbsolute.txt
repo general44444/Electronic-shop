@@ -1,0 +1,17 @@
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\bin\Debug\Electronic shop.exe.config
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\bin\Debug\Electronic shop.exe
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\bin\Debug\Electronic shop.pdb
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\bin\Debug\Guna.UI2.dll
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Form1.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Properties.Resources.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.csproj.GenerateResource.cache
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.csproj.CoreCompileInputs.cache
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.csproj.CopyComplete
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.exe
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.pdb
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Admin.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Register.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Home.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic shop.csprojAssemblyReference.cache
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Forms.AddProduct.resources
+C:\Users\General\Desktop\Electronic shop\Electronic shop\Electronic shop\obj\Debug\Electronic_shop.Forms.WishList.resources
