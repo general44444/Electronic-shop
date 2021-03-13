@@ -35,6 +35,7 @@
             this.ManageData = new Guna.UI2.WinForms.Guna2ImageButton();
             this.AddProduct = new Guna.UI2.WinForms.Guna2ImageButton();
             this.WishList = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.AllProducts = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1301, 62);
+            this.panel1.Size = new System.Drawing.Size(1305, 62);
             this.panel1.TabIndex = 14;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -71,7 +72,7 @@
             this.guna2ImageButton1.Image = global::Electronic_shop.Properties.Resources.remove_button1;
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(1252, 0);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(1257, 0);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageRotate = 20F;
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(40, 40);
@@ -100,7 +101,7 @@
             this.ManageData.Image = global::Electronic_shop.Properties.Resources._3211;
             this.ManageData.ImageRotate = 0F;
             this.ManageData.ImageSize = new System.Drawing.Size(40, 40);
-            this.ManageData.Location = new System.Drawing.Point(134, 64);
+            this.ManageData.Location = new System.Drawing.Point(134, 68);
             this.ManageData.Name = "ManageData";
             this.ManageData.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.ManageData.PressedState.Parent = this.ManageData;
@@ -117,7 +118,7 @@
             this.AddProduct.Image = global::Electronic_shop.Properties.Resources._23;
             this.AddProduct.ImageRotate = 0F;
             this.AddProduct.ImageSize = new System.Drawing.Size(40, 40);
-            this.AddProduct.Location = new System.Drawing.Point(69, 64);
+            this.AddProduct.Location = new System.Drawing.Point(69, 68);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.AddProduct.PressedState.Parent = this.AddProduct;
@@ -134,7 +135,7 @@
             this.WishList.Image = global::Electronic_shop.Properties.Resources._123;
             this.WishList.ImageRotate = 0F;
             this.WishList.ImageSize = new System.Drawing.Size(40, 40);
-            this.WishList.Location = new System.Drawing.Point(4, 64);
+            this.WishList.Location = new System.Drawing.Point(4, 68);
             this.WishList.Name = "WishList";
             this.WishList.PressedState.ImageSize = new System.Drawing.Size(42, 42);
             this.WishList.PressedState.Parent = this.WishList;
@@ -142,15 +143,25 @@
             this.WishList.TabIndex = 15;
             this.WishList.Click += new System.EventHandler(this.WishList_Click);
             // 
+            // AllProducts
+            // 
+            this.AllProducts.AutoScroll = true;
+            this.AllProducts.AutoScrollMinSize = new System.Drawing.Size(10, 10);
+            this.AllProducts.Location = new System.Drawing.Point(197, 68);
+            this.AllProducts.Name = "AllProducts";
+            this.AllProducts.Size = new System.Drawing.Size(1108, 764);
+            this.AllProducts.TabIndex = 18;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 832);
-            this.Controls.Add(this.ManageData);
-            this.Controls.Add(this.AddProduct);
+            this.ClientSize = new System.Drawing.Size(1305, 832);
             this.Controls.Add(this.WishList);
+            this.Controls.Add(this.ManageData);
+            this.Controls.Add(this.AllProducts);
+            this.Controls.Add(this.AddProduct);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
@@ -172,5 +183,6 @@
         public Guna.UI2.WinForms.Guna2ImageButton WishList;
         public Guna.UI2.WinForms.Guna2ImageButton AddProduct;
         public Guna.UI2.WinForms.Guna2ImageButton ManageData;
+        private System.Windows.Forms.Panel AllProducts;
     }
 }

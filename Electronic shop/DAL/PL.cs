@@ -138,7 +138,15 @@ namespace Electronic_shop.DAL
             ob.Close();
 
         }
-
+        /////////////Select Products
+        public DataTable SelectProducts()
+        {
+            dt = new DataTable();
+            ob.Open();
+            dt = ob.Reader("SelectProducts", null);
+            ob.Close();
+            return dt;
+        }
 
 
     }
