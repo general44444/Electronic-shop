@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Electronic_shop
 {
+    //Hellooooooo
     public partial class Home : Form
     {
         Panel panel = new Panel();
