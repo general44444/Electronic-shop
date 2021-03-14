@@ -88,9 +88,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(605, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 30);
+            this.label2.Size = new System.Drawing.Size(184, 30);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Shop";
+            this.label2.Text = "Shop111111";
             // 
             // ManageData
             // 
