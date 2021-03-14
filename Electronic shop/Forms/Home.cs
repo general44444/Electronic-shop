@@ -15,6 +15,29 @@ namespace Electronic_shop
     //Hellooooooo
     public partial class Home : Form
     {
+
+
+
+        //Delegate
+        private static Home n;
+        static void cf(object sender, FormClosedEventArgs e)
+        {
+            n = null;
+        }
+        public static Home deleg
+        {
+            get
+            {
+                if (n == null)
+                {
+                    n = new Home();
+                }
+                return n;
+            }
+        }
+
+
+
         Panel panel = new Panel();
 
         bool MouseDown = false;
@@ -25,37 +48,16 @@ namespace Electronic_shop
         {
             InitializeComponent();
 
-            dt = new DataTable();
-            dt = ob.SelectProducts();
-            if (dt.Rows.Count > 0)
+            if (n == null)
             {
-
-
-
-                int i = 0;
-                int LocX = 0;
-                int LocY = 50;
-                for (int x = 0; x < dt.Rows.Count; x++)
-                {
-                    byte[] img = (byte[])dt.Rows[x][5];
-                    MemoryStream ms = new MemoryStream(img);
-                    
-                   
-                    if (i == 3)
-                    {
-                        LocX = 0;
-                        LocY += 370;
-                        i = 0;
-                    }
-                    i++;
-                    p(dt.Rows[x][1].ToString(), dt.Rows[x][2].ToString(), dt.Rows[x][3].ToString(), Convert.ToDouble(dt.Rows[x][4]), ms);
-                    panel.Location = new Point(LocX, LocY);
-                    
-                    LocX += 300;
-                }
+                n = this;
             }
 
+            ProductsLocation();
+           
+
         }
+
 
 
         //Shadow//
@@ -121,7 +123,7 @@ namespace Electronic_shop
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+           
         }
 
 
@@ -189,8 +191,40 @@ namespace Electronic_shop
             panel.Controls.Add(textBox);
             panel.Controls.Add(pic);
             AllProducts.Controls.Add(panel);
+          
 
         }
+        public void ProductsLocation()
+        {
+            dt = new DataTable();
+            dt = ob.SelectProducts();
+            if (dt.Rows.Count > 0)
+            {
 
+
+
+                int i = 0;
+                int LocX = 0;
+                int LocY = 50;
+                for (int x = 0; x < dt.Rows.Count; x++)
+                {
+                    byte[] img = (byte[])dt.Rows[x][5];
+                    MemoryStream ms = new MemoryStream(img);
+
+
+                    if (i == 3)
+                    {
+                        LocX = 0;
+                        LocY += 370;
+                        i = 0;
+                    }
+                    i++;
+                    p(dt.Rows[x][1].ToString(), dt.Rows[x][2].ToString(), dt.Rows[x][3].ToString(), Convert.ToDouble(dt.Rows[x][4]), ms);
+                    panel.Location = new Point(LocX, LocY);
+
+                    LocX += 300;
+                }
+            }
+        }
     }
 }

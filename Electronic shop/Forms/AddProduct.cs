@@ -12,6 +12,7 @@ namespace Electronic_shop.Forms
 {
     public partial class AddProduct : Form
     {
+        Home frm = new Home();
         bool MouseDown = false;
         Point LastLocation;
         OpenFileDialog op = new OpenFileDialog();
@@ -74,7 +75,9 @@ namespace Electronic_shop.Forms
             img = ms.ToArray();
             try
             {
+               
                 ob.Add_Product(txtName.Text, txtDesc.Text, Convert.ToDouble(txtPrice.Text), comboType.Text, img);
+                Home.deleg.ProductsLocation();
                 MessageBox.Show("added succsessfully");
                 
             }
@@ -82,6 +85,7 @@ namespace Electronic_shop.Forms
             {
                 return;
             }
+            
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

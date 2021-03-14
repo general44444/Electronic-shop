@@ -183,6 +183,6 @@
         public Guna.UI2.WinForms.Guna2ImageButton WishList;
         public Guna.UI2.WinForms.Guna2ImageButton AddProduct;
         public Guna.UI2.WinForms.Guna2ImageButton ManageData;
-        private System.Windows.Forms.Panel AllProducts;
+        public System.Windows.Forms.Panel AllProducts;
     }
 }
