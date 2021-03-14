@@ -15,10 +15,6 @@ namespace Electronic_shop
    
     public partial class Home : Form
     {
-
-<<<<<<< HEAD
-
-
         //Delegate
         private static Home n;
         static void cf(object sender, FormClosedEventArgs e)
@@ -36,14 +32,8 @@ namespace Electronic_shop
                 return n;
             }
         }
-
-
-
-=======
-        
->>>>>>> 48969f603e9094e9ac6e53363c08e1eebea7b8ca
+        //Home Constrctur
         Panel panel = new Panel();
-
         bool MouseDown = false;
         Point LastLocation;
         DAL.PL ob = new DAL.PL();
@@ -51,19 +41,13 @@ namespace Electronic_shop
         public Home()
         {
             InitializeComponent();
-
             if (n == null)
             {
                 n = this;
             }
 
             ProductsLocation();
-           
-
         }
-
-
-
         //Shadow//
         private const int CS_DropShadow = 0x00020000;
 
