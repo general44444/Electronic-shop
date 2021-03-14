@@ -13,6 +13,8 @@ namespace Electronic_shop
 {
     public partial class Home : Form
     {
+
+        //asdadqwesadadqwe
         Panel panel = new Panel();
 
         bool MouseDown = false;
