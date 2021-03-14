@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Electronic_shop
 {
-    //HIIIIIIIIIIIIIIIIIII
-    //Helloooooooasdasdasdadqwe
+    
+   
     public partial class Home : Form
     {
 
-        //asdadqwesadadqwe
+        
         Panel panel = new Panel();
 
         bool MouseDown = false;
