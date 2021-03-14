@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Electronic_shop
 {
     //HIIIIIIIIIIIIIIIIIII
-    //Hellooooooo
+    //Helloooooooasdasdasdadqwe
     public partial class Home : Form
     {
 
