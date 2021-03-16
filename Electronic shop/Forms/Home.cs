@@ -32,12 +32,17 @@ namespace Electronic_shop
                 return n;
             }
         }
-        //Home Constrctur
-        Panel panel = new Panel();
-        bool MouseDown = false;
-        Point LastLocation;
+
+
+
+        Forms.AddProduct frm = new Forms.AddProduct();
+        Panel panel = new Panel();     
         DAL.PL ob = new DAL.PL();
         DataTable dt = new DataTable();
+        bool MouseDown = false;
+        Point LastLocation;
+
+        //Home Constrctur
         public Home()
         {
             InitializeComponent();
@@ -45,8 +50,17 @@ namespace Electronic_shop
             {
                 n = this;
             }
-
+            
             ProductsLocation();
+
+            dt = new DataTable();
+            dt = ob.SelectProductType();
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                ComboType.Items.Add(dt.Rows[i][0]);          
+            }
+            ComboType.Text = "All";
+
         }
         //Shadow//
         private const int CS_DropShadow = 0x00020000;
@@ -123,11 +137,9 @@ namespace Electronic_shop
 
         }
 
-        /////////////////////create Panel
+        /////////////////////Create Product Panel
         public void p(string name, string description, string type, double price, MemoryStream image)
-        {
-            
-
+        {           
             /////////////////// Labels//////////////
             
             Label label = new Label();
@@ -167,6 +179,7 @@ namespace Electronic_shop
 
             ////////////////Panel////////////
             panel = new Panel();
+           
             panel.Size = new Size(270, 350);
             panel.Location = new Point(0, 80);
             panel.BackColor = Color.DodgerBlue;
@@ -184,13 +197,20 @@ namespace Electronic_shop
         }
         public void ProductsLocation()
         {
+            dt.Clear();
+            AllProducts.Controls.Clear();
             dt = new DataTable();
-            dt = ob.SelectProducts();
-            if (dt.Rows.Count > 0)
+           
+            if (ComboType.Text == "All")
             {
-
-
-
+                dt = ob.SelectProducts();               
+            }
+            else
+            {
+                dt = ob.SelectProductsType(ComboType.Text);
+            }
+            if (dt.Rows.Count > 0)
+            {               
                 int i = 0;
                 int LocX = 0;
                 int LocY = 50;
@@ -198,7 +218,6 @@ namespace Electronic_shop
                 {
                     byte[] img = (byte[])dt.Rows[x][5];
                     MemoryStream ms = new MemoryStream(img);
-
 
                     if (i == 3)
                     {
@@ -213,6 +232,11 @@ namespace Electronic_shop
                     LocX += 300;
                 }
             }
+        }
+
+        private void ComboType_SelectedIndexChanged(object sender, EventArgs e)
+        {        
+            ProductsLocation();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Electronic_shop.Forms
 {
     public partial class AddProduct : Form
     {
-        Home frm = new Home();
+       
         bool MouseDown = false;
         Point LastLocation;
         OpenFileDialog op = new OpenFileDialog();

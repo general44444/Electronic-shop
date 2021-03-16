@@ -100,6 +100,16 @@ namespace Electronic_shop.DAL
             ob.Close();
             return dt;
         }
+        /////////// Select Product Type
+        public DataTable SelectProductType()
+        {
+
+            dt = new DataTable();
+            ob.Open();
+            dt = ob.Reader("SelectProductType", null);
+            ob.Close();
+            return dt;
+        }
 
         //////////// Search
         public DataTable SearchUser(string input)
@@ -148,6 +158,20 @@ namespace Electronic_shop.DAL
             return dt;
         }
 
+        /////////////Select Products Where Type
+        public DataTable SelectProductsType(string Type)
+        {
+            dt = new DataTable();
+
+            SqlParameter[] p = new SqlParameter[1];
+            p[0] = new SqlParameter("@Type", SqlDbType.NVarChar, 50);
+            p[0].Value = Type;
+
+            ob.Open();
+            dt = ob.Reader("SelectProductsType", p);
+            ob.Close();
+            return dt;
+        }
 
     }
 }
